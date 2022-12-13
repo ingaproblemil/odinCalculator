@@ -6,12 +6,11 @@
 }
 
 :root {
-    --main-bg-color: rgb(26, 5, 3);
+    --main-bg-color: #1B1C1E;
     --num-button-color: rgb(207, 203, 202);
     --ops-button-color: rgb(216, 221, 222);
     --calc-color: rgba(171, 161, 148);
     --text-color: white;
-
 }
 
 body {
@@ -121,6 +120,10 @@ button {
     font-weight: 900;
     border:rgb(109, 96, 81);
     box-shadow: 2px 2px rgba(14, 20, 40, 0.164)
+}
+
+#backspace {
+    font-size: 23px;
 }
 
 button:active {

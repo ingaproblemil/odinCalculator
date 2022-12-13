@@ -32,11 +32,6 @@ function operate(a, b, c){
     }
 }
 
-console.log(operate(10,2,'multiply'))
-console.log(operate(1,2,'add'))
-console.log(operate(4, 5, 'subtract'))
-console.log(operate(243, 5, 'divide'))
-
 //knapparna
 
 const buttons = document.getElementsByClassName('buttons');
@@ -48,6 +43,9 @@ const subtractBtn = document.getElementById('subtractBtn');
 const multiplyBtn = document.getElementById('multiplyBtn');
 const divideBtn = document.getElementById('divideBtn');
 const equalsBtn = document.getElementById('equalsBtn');
+
+//variabler
+
 let num1 = 0;
 let operator = 0;
 let num2 = 0;
@@ -91,9 +89,9 @@ addBtn.addEventListener('click', function () {
     let num1 = displayValue;
     let operator = 'add';
     operatorArray.push(num1, operator);
-    display.textContent = ('+');
+    display.textContent = (num1);
     displayArr = [];
-    console.log(num1);
+    
 });
 
 subtractBtn.addEventListener('click', function () {
@@ -103,7 +101,7 @@ subtractBtn.addEventListener('click', function () {
     operatorArray.push(num1, operator);
     display.textContent = ('-');
     displayArr = [];
-    console.log(num1);
+   
 });
 
 multiplyBtn.addEventListener('click', function () {
@@ -113,7 +111,7 @@ multiplyBtn.addEventListener('click', function () {
     operatorArray.push(num1, operator);
     display.textContent = ('*');
     displayArr = [];
-    console.log(num1);
+    
 });
 
 divideBtn.addEventListener('click', function () {
@@ -123,14 +121,8 @@ divideBtn.addEventListener('click', function () {
     operatorArray.push(num1, operator);
     display.textContent = ('÷');
     displayArr = [];
-    console.log(num1);
+    
 });
-
-
-
-
-
-
 
 //equalsbutton enligt samma princip som ovan!
 
@@ -142,4 +134,6 @@ equalsBtn.addEventListener('click', function () {
     console.log(operatorArray);
     let displaySum = operate((+operatorArray[0]), (+operatorArray[2]), operatorArray[1]);
     display.textContent = displaySum;
+    displayArr = [];
+    operatorArray = [];
 })
