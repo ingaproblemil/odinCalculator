@@ -26,6 +26,9 @@ function operate(a, b, c){
     } else if (c === 'subtract') {
         return subtract(a, b)
     } else if (c === 'divide') {
+        if (b == 0) {
+            return 'kan man junte göra ju'
+        }
         return divide(a, b)
     } else if (c === 'multiply') {
         return multiply(a, b);
@@ -46,9 +49,9 @@ const equalsBtn = document.getElementById('equalsBtn');
 
 //variabler
 
-let num1 = 0;
-let operator = 0;
-let num2 = 0;
+// // let num1 = 0;
+// // let operator = 0;
+// // // let num2 = 0;
 let displayArr = [];
 let operatorArray = [];
 let displayValue = displayArr.join('');
@@ -85,41 +88,72 @@ for (const button of buttons) {
 //Operator buttons
 
 addBtn.addEventListener('click', function () {
-    let displayValue = displayArr.join('');
+    
     let num1 = displayValue;
     let operator = 'add';
     operatorArray.push(num1, operator);
-    display.textContent = (num1);
+    console.log(operatorArray)
+    if (operatorArray.length > 2) {
+        let displaySum = operate((+operatorArray[0]), (+operatorArray[2]), operatorArray[1]);
+        display.textContent = displaySum;
+        let num1 = displaySum.toString();
+        operatorArray = [];
+        operatorArray.push(num1, operator);
+        displayArr = []
+    }
     displayArr = [];
-    
 });
 
 subtractBtn.addEventListener('click', function () {
-    let displayValue = displayArr.join('');
+    
     let num1 = displayValue;
     let operator = 'subtract';
     operatorArray.push(num1, operator);
-    display.textContent = ('-');
+    console.log(operatorArray)
+    if (operatorArray.length > 2) {
+        let displaySum = operate((+operatorArray[0]), (+operatorArray[2]), operatorArray[1]);
+        display.textContent = displaySum;
+        let num1 = displaySum.toString();
+        operatorArray = [];
+        operatorArray.push(num1, operator);
+        displayArr = []
+    }
     displayArr = [];
    
 });
 
 multiplyBtn.addEventListener('click', function () {
-    let displayValue = displayArr.join('');
+    
     let num1 = displayValue;
     let operator = 'multiply';
     operatorArray.push(num1, operator);
-    display.textContent = ('*');
+    console.log(operatorArray)
+    if (operatorArray.length > 2) {
+        let displaySum = operate((+operatorArray[0]), (+operatorArray[2]), operatorArray[1]);
+        display.textContent = displaySum;
+        let num1 = displaySum.toString();
+        operatorArray = [];
+        operatorArray.push(num1, operator);
+        displayArr = []
+    }
     displayArr = [];
     
 });
 
 divideBtn.addEventListener('click', function () {
-    let displayValue = displayArr.join('');
+
     let num1 = displayValue;
     let operator = 'divide';
     operatorArray.push(num1, operator);
-    display.textContent = ('÷');
+    console.log(operatorArray)
+    if (operatorArray.length > 2) {
+        let displaySum = operate((+operatorArray[0]), (+operatorArray[2]), operatorArray[1]);
+        display.textContent = displaySum;
+        let num1 = displaySum.toString();
+        operatorArray = [];
+        operatorArray.push(num1, operator);
+        displayArr = []
+    }
     displayArr = [];
     
 });
